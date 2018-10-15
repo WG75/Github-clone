@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+var morgan = require('morgan')
 
 const app = express();
+
+app.use(morgan('combined'))
 
 const apiRoutes = require('./routes');
 
