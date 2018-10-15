@@ -6,6 +6,7 @@
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "flow": "flow",
     "lint": "eslint src/**/*.js",
     "lint:fix": "yarn lint --fix",
     "lintcss": "stylelint src/*.css src/**/*.css",
@@ -24,7 +25,8 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier-eslint": "^8.8.2",
     "stylelint": "^9.6.0",
-    "stylelint-config-recommended": "^2.1.0"
+    "stylelint-config-recommended": "^2.1.0",
+    "flow-bin": "^0.82.0"
   },
   "eslintConfig": {
     "extends": "react-app"
