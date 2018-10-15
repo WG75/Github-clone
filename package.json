@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "client": "react-scripts start",
+    "server": "node ./server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "flow": "flow",
