@@ -19,8 +19,11 @@ type Props = {
   title: string,
   hint: string,
   error: boolean,
+  errorMessage: string,
   loading: boolean,
-  invalidCredintials: boolean,
+  failedLogin: boolean,
+  failedLoginMessage: string,
+
   onSubmit: (data: formData) => void,
 };
 
@@ -50,7 +53,15 @@ export default class LoginPanel extends React.Component<Props, State> {
 
   render() {
     const {
-      logo, title, hint, error, loading, onSubmit, invalidCredintials,
+      logo,
+      title,
+      hint,
+      error,
+      loading,
+      onSubmit,
+      failedLoginMessage,
+      failedLogin,
+      errorMessage,
     } = this.props;
 
     const { selectedAuthType, isAdmin } = this.state;
@@ -67,7 +78,7 @@ export default class LoginPanel extends React.Component<Props, State> {
               something went wrong, please try again.
             </p>
           )}
-          {invalidCredintials && (
+          {failedLogin && (
             <div className="login-panel__feedback login-panel__feedback--is_danger">
               username or password is invalid. please try again.
             </div>
@@ -100,12 +111,7 @@ export default class LoginPanel extends React.Component<Props, State> {
               />
             </div>
           ) : (
-            <Input
-              className="login-panel__input"
-              name="token"
-              id="token"
-              label="Access Token"
-            />
+            <Input className="login-panel__input" name="token" id="token" label="Access Token" />
           )}
 
           <Checkbox
@@ -123,7 +129,7 @@ export default class LoginPanel extends React.Component<Props, State> {
             Sign in
           </Button>
 
-          {loading && 'loading.....'}
+          {loading && <div className="login-panel__spinner"></div>}
         </form>
       </section>
     );

@@ -13,7 +13,9 @@ describe('LoginPanel component', () => {
       logo="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/github-octocat.svg"
       error={false}
       loading={false}
-      invalidCredintials={false}
+      errorMessage="something went wrong, please try again."
+      failedLoginMessage="username or password is invalid. please try again."
+      failedLogin={false}
       onSubmit={onSubmitMock}
     />,
   );

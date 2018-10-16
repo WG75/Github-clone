@@ -5,6 +5,7 @@
   color: #fff;
   padding: 25px;
   border-radius: 10px;
+  position: relative;
 }
 
 .login_panel__header-container {
@@ -28,24 +29,26 @@
 }
 
 .login-panel__feedback {
+  padding: 20px;
+  width: 70%;
+  margin: 30px auto 0;
 }
 
 .login-panel__feedback--is_danger {
+  background: #fd2d2d;
 }
 
 .login-panel__fields-wrapper {
 }
 
 .login-panel__form {
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .login-panel__input {
-    margin: 10px 0;
-
+  margin: 10px 0;
 }
 
 .login-panel__auth-type {
@@ -57,4 +60,25 @@
 }
 
 .login-panel__button {
+}
+
+.login-panel__spinner {
+  height: 20px;
+  width: 20px;
+  animation: rotate 0.8s infinite linear;
+  border: 8px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
