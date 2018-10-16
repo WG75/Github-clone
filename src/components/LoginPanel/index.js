@@ -5,6 +5,7 @@ import AuthTypeTapper from '../AuthTypeTapper';
 import Input from '../Input';
 import Button from '../Button';
 import Checkbox from '../Checkbox';
+import './LoginPanel.css';
 
 type formData = {
   authType: string,
@@ -54,50 +55,76 @@ export default class LoginPanel extends React.Component<Props, State> {
 
     const { selectedAuthType, isAdmin } = this.state;
     return (
-      <section>
-        <header>
-          <div className="content">
-            <img src={logo} alt="github logo" />
-            <h2 className="title">{title}</h2>
-            <span>{hint}</span>
+      <section className="login-panel">
+        <header className="login_panel__header-container">
+          <div className="login-panel__header-content">
+            <img className="login-panel__header-logo" src={logo} alt="github logo" />
+            <h2 className="login-panel__header-title">{title}</h2>
+            <span className="login-panel__header-title">{hint}</span>
           </div>
-          {error && <div>something went wrong, please try again.</div>}
-          {invalidCredintials && <div>username or password is invalid. please try again.</div>}
-          <form onSubmit={onSubmit}>
-            <AuthTypeTapper
-              selectedType={selectedAuthType}
-              authTypes={['token', 'username_&_password']}
-              onChange={(type) => {
-                this.onAuthTypeChange(type);
-              }}
-            />
-            {selectedAuthType === 'username_&_password' ? (
-              <div>
-                <Input name="username" id="username" label="Username" />
-                <Input type="password" name="password" id="password" label="Password" />
-              </div>
-            ) : (
-              <Input name="token" id="token" label="Personal Access Token" />
-            )}
-
-            <Checkbox
-              label="Login as admin"
-              id="admin"
-              name="admin"
-              checked={isAdmin}
-              onChange={() => {
-                this.toggleAdminState();
-              }}
-            />
-
-            <Button isPrimary type="submit">
-              Sign in
-            </Button>
-
-            {loading && 'loading.....'}
-          </form>
-          ;
+          {error && (
+            <p className="login-panel__feedback login-panel__feedback--is_danger">
+              something went wrong, please try again.
+            </p>
+          )}
+          {invalidCredintials && (
+            <div className="login-panel__feedback login-panel__feedback--is_danger">
+              username or password is invalid. please try again.
+            </div>
+          )}
         </header>
+
+        <form onSubmit={onSubmit} className="login-panel__form">
+          <AuthTypeTapper
+            className="login-panel__auth-type"
+            selectedType={selectedAuthType}
+            authTypes={['Personal Access token', 'username_&_password']}
+            onChange={(type) => {
+              this.onAuthTypeChange(type);
+            }}
+          />
+          {selectedAuthType === 'username_&_password' ? (
+            <div className="login_panel__fields_wrapper">
+              <Input
+                className="login-panel__input"
+                name="username"
+                id="username"
+                label="Username"
+              />
+              <Input
+                className="login-panel__input"
+                type="password"
+                name="password"
+                id="password"
+                label="Password"
+              />
+            </div>
+          ) : (
+            <Input
+              className="login-panel__input"
+              name="token"
+              id="token"
+              label="Access Token"
+            />
+          )}
+
+          <Checkbox
+            className="login-panel__checkbox"
+            label="Login as admin"
+            id="admin"
+            name="admin"
+            checked={isAdmin}
+            onChange={() => {
+              this.toggleAdminState();
+            }}
+          />
+
+          <Button className="login-panel__button" isPrimary type="submit">
+            Sign in
+          </Button>
+
+          {loading && 'loading.....'}
+        </form>
       </section>
     );
   }

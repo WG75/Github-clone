@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import './Checkbox.css';
 
 type Props = {
   checked: boolean,
@@ -9,14 +10,15 @@ type Props = {
   id: string,
   onChange: () => void,
   value?: string,
+  className?: string,
 };
 
 const Checkbox = ({
-  checked, label, onChange, id, name, value,
+  checked, label, onChange, id, name, value, className,
 }: Props) => (
-  <label htmlFor={id}>
-    <span>{label}</span>
+  <label className={`checkbox ${className || ''}`} htmlFor={id}>
     <input
+      className="checkbox__input"
       type="checkbox"
       name={name}
       value={value}
@@ -24,6 +26,7 @@ const Checkbox = ({
       checked={checked}
       onChange={onChange}
     />
+    <span className="checkbox__label">{label}</span>
   </label>
 );
 

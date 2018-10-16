@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import './AuthTypeTapper.css';
 
 type Props = {
   className?: string,
@@ -12,11 +13,13 @@ type Props = {
 const AuthTypeTapper = ({
   className, selectedType, authTypes, onChange,
 }: Props) => (
-  <div className={`${''} ${className || ''}`}>
+  <div className={`auth-type ${className || ''}`}>
     {authTypes.map(type => (
-      <label key={type} className={`${''} ${className || ''}`} htmlFor={type}>
+      <label key={type} className={`auth-type_label ${
+        type === selectedType ? 'auth-type__input--is-checked' : ''
+      }`} htmlFor={type}>
         <input
-          className=""
+          className={`auth-type__input `}
           type="radio"
           name="authType"
           value={type}
