@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <LoginPanel
-        title="Githun Insights"
+        title="Github Insights"
         hint="Please login to get insights for your github account."
         logo="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/github-octocat.svg"
         error={false}
