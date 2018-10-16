@@ -16,6 +16,9 @@
     "lintcss:fix": "yarn lintcss --fix"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
     "express": "^4.16.3",
     "mongoose": "^5.3.3",
     "normalize.css": "^8.0.0",

@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-var morgan = require('morgan')
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(morgan('combined'))
+app.use(morgan('combined'));
+app.use(bodyParser());
 
 const apiRoutes = require('./routes');
 
