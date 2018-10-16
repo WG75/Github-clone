@@ -29,7 +29,7 @@ const AuthTypeTapper = ({
           }}
           checked={type === selectedType}
         />
-        <span className="">{type}</span>
+        <span className="">{type == "basic" ? "username & password": "Personal Access Token"}</span>
       </label>
     ))}
   </div>

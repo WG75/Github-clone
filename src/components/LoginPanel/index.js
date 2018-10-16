@@ -34,7 +34,7 @@ type State = {
 
 export default class LoginPanel extends React.Component<Props, State> {
   state = {
-    selectedAuthType: 'username_&_password',
+    selectedAuthType: 'basic',
     isAdmin: false,
   };
 
@@ -89,12 +89,12 @@ export default class LoginPanel extends React.Component<Props, State> {
           <AuthTypeTapper
             className="login-panel__auth-type"
             selectedType={selectedAuthType}
-            authTypes={['Personal Access token', 'username_&_password']}
+            authTypes={['basic', 'token']}
             onChange={(type) => {
               this.onAuthTypeChange(type);
             }}
           />
-          {selectedAuthType === 'username_&_password' ? (
+          {selectedAuthType === 'basic' ? (
             <div className="login_panel__fields_wrapper">
               <Input
                 className="login-panel__input"
