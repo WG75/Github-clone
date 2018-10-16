@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react';
 import Enzyme from '../../config/enzyme';
 import Button from '../../components/Button';

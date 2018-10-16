@@ -1,9 +1,10 @@
 // @flow
+
 import React from 'react';
 import Enzyme from '../../config/enzyme';
 import AuthTypeTapper from '../../components/AuthTypeTapper';
 
-describe('Button component', () => {
+describe('AuthTypeTapper component', () => {
   const onChangeMock = jest.fn();
   const wrapper = Enzyme.shallow(
     <AuthTypeTapper
@@ -30,7 +31,7 @@ describe('Button component', () => {
     wrapper
       .find('input')
       .at(1)
-      .simulate('change', onChangeMock);
+      .simulate('change');
 
     expect(onChangeMock.mock.calls.length).toBe(1);
     expect(onChangeMock.mock.calls[0][0]).toBe('username_&_password');

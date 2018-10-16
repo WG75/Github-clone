@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import AuthTypeTapper from '../../components/AuthTypeTapper';
+import LoginPanel from '../../components/LoginPanel';
 import './App.css';
 
 class App extends React.Component {
@@ -17,12 +17,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <AuthTypeTapper
-        selectedType={this.state.selectedAuthType}
-        authTypes={['token', 'username_&_password']}
-        onChange={(type) => {
-          this.onChange(type);
-        }}
+      <LoginPanel
+        title="Githun Insights"
+        hint="Please login to get insights for your github account."
+        logo="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/github-octocat.svg"
+        error={false}
+        loading={false}
+        onSubmit={console.log}
       />
     );
   }
