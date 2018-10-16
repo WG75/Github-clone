@@ -1,10 +1,12 @@
+// @flow
+
 import React from 'react';
-import Button from '../../components/Button';
+import Input from '../../components/Input';
 import './App.css';
 
 class App extends React.Component {
   render() {
-    return <Button>Login</Button>;
+    return <Input id="username" label="Username"/>;
   }
 }
 
