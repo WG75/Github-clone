@@ -1,0 +1,22 @@
+.button {
+  line-height: 52px;
+  font-size: 16px;
+  width: 166px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button--is_primary {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.button--is_primary:hover {
+  background: #000;
+  border-color: #fff;
+  color: #fff;
+}

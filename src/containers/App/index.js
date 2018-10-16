@@ -1,9 +1,10 @@
 import React from 'react';
+import Button from '../../components/Button';
 import './App.css';
 
 class App extends React.Component {
   render() {
-    return <h1>yay!</h1>;
+    return <Button>Login</Button>;
   }
 }
 
