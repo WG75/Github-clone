@@ -1,12 +1,30 @@
 // @flow
 
 import React from 'react';
-import Input from '../../components/Input';
+import AuthTypeTapper from '../../components/AuthTypeTapper';
 import './App.css';
 
 class App extends React.Component {
+  state = {
+    selectedAuthType: 'token',
+  };
+
+  onChange(type: string) {
+    this.setState({
+      selectedAuthType: type,
+    });
+  }
+
   render() {
-    return <Input id="username" label="Username"/>;
+    return (
+      <AuthTypeTapper
+        selectedType={this.state.selectedAuthType}
+        authTypes={['token', 'username_&_password']}
+        onChange={(type) => {
+          this.onChange(type);
+        }}
+      />
+    );
   }
 }
 
