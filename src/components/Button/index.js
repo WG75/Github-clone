@@ -40,7 +40,7 @@ const Button = ({
     disabled={disabled}
     className={`button ${isPrimary ? 'button--is_primary' : ''} ${
       isSecondary ? 'button--is_secondary' : ''
-    } ${className || ''}`}
+    } ${disabled ? 'button--is_disabled' : ''} ${className || ''}`}
     onClick={onClick}
     type={type}
   >
