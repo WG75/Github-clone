@@ -7,10 +7,11 @@ router.post('/github', async (req, res) => {
     const { admin } = req.body;
 
     const user = await authenticateGithub(req.body);
-    return res.json({ user, admin });
+    user.isAdmin = admin;
+    return res.json({ user });
   } catch (err) {
-    console.log(err.message);
-    res.status(401).json({ authenticated: false });
+    const statusCode = err.response ? err.response.status : 500;
+    res.status(statusCode).json({ authenticated: false });
   }
 });
 
