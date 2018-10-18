@@ -190,10 +190,10 @@ export default class LoginPanel extends React.Component<Props, State> {
             isPrimary
             type="submit"
           >
-            Sign in
+            {loading ? <div className="login-panel__spinner" /> : "Sign in"}
           </Button>
 
-          {loading && <div className="login-panel__spinner" />}
+          
         </form>
       </section>
     );

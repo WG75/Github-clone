@@ -1,5 +1,17 @@
+:root {
+  --main-bg-color: linear-gradient(180deg, #f3f3f3, #b0b0b0);
+  --shade-of-black: #484848;
+  --shade-of-white: #dedede;
+  --shade-of-blue: #7cbce7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #f7f7f7;
+  background: var(--main-bg-color);
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,4 +20,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-

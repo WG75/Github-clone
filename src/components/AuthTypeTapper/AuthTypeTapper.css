@@ -3,15 +3,10 @@
 
 .auth-type_label {
   display: inline-block;
-  border: 2px solid #fff;
+  border: 1px solid var(--shade-of-black);
   cursor: pointer;
   padding: 15px;
   transition: background 0.3s;
-}
-
-
-.auth-type_label:nth-child(1) {
-  margin-right: 2px;
 }
 
 .auth-type__input {
@@ -20,6 +15,21 @@
 }
 
 .auth-type__input--is-checked {
-  background: #fff;
-  color: #000;
+  background: var(--shade-of-black);
+  color: var(--shade-of-white);
+}
+
+@media screen and (min-width: 840px) {
+  .auth-type_label:nth-child(1) {
+    margin-right: 2px;
+  }
+}
+
+@media screen and (max-width: 839px) {
+  .auth-type_label {
+    min-width: 200px;
+  }
+  .auth-type_label:nth-child(1) {
+    margin-bottom: 5px;
+  }
 }

@@ -1,11 +1,10 @@
 .login-panel {
-  background: rgba(0, 0, 0, 0.9);
-  width: 800px;
-  margin: 70px auto;
-  color: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width: 390px;
+  transform: translate(-50%, -50%);
+  color: var(--shade-of-black);
 }
 
 .login_panel__header-container {
@@ -17,8 +16,6 @@
 
 .login-panel__header-logo {
   width: 100px;
-  border: 2px solid #fff;
-  border-radius: 50%;
 }
 
 .login-panel__header-title {
@@ -29,20 +26,20 @@
 }
 
 .login-panel__feedback {
-  padding: 20px;
-  width: 70%;
+  padding: 15px 7px;
   margin: 30px auto 0;
 }
 
 .login-panel__feedback--is_danger {
-  background: #fd2d2d;
+  background: #ffe5e5;
+  border: 1px solid red;
 }
 
 .login-panel__fields-wrapper {
 }
 
 .login-panel__form {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -57,6 +54,7 @@
 
 .login-panel__checkbox {
   margin: 30px 0 20px;
+  text-align: left;
 }
 
 .login-panel__button {
@@ -69,9 +67,9 @@
   border: 8px solid #fff;
   border-right-color: transparent;
   border-radius: 50%;
-  position: absolute;
   bottom: 30px;
   right: 30px;
+  margin: 0 auto;
 }
 
 @keyframes rotate {
