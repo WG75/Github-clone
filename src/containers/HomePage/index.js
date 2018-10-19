@@ -3,22 +3,23 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Nav from '../../components/Nav';
 // import {} from './actions';
 
 type Props = {
-  loading: boolean,
-  error: boolean,
-  successfulAttempt: boolean,
-  failedAttempt: boolean,
   user: any,
-  authTypeUsed?: string,
-  onLogin: (data: formData) => void,
 };
 
 class HomeScreen extends React.Component<Props> {
   render() {
     const { user } = this.props;
-    return user ? <h1>hey user</h1> : <Redirect to="/login" />;
+    return user ? (
+      <div className="home-container">
+        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} />
+      </div>
+    ) : (
+      <Redirect to="/login" />
+    );
   }
 }
 

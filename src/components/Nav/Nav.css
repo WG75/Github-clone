@@ -1,0 +1,41 @@
+.nav {
+  justify-content: space-between;
+  padding: 10px 70px;
+  background: var(--shade-of-black);
+  color: var(--shade-of-white);
+}
+
+.nav__user-container,
+.nav__logo-container,
+.nav__right,
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo-container {
+}
+
+.nav__logo-image {
+  width: 50px;
+}
+
+.nav__logo-text {
+  font-size: 22px;
+}
+
+.nav__user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--shade-of-white);
+}
+.nav__username {
+  font-weight: bold;
+  margin: 0 7px;
+}
+
+.nav__button,
+.nav__user-container {
+  margin: 0 15px;
+}
