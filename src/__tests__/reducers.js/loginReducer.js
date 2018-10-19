@@ -34,7 +34,6 @@ describe('login reducer', () => {
         actions.loginSuccess(),
       ),
     ).toEqual({
-      loading: true,
       error: false,
       successfulAttempt: true,
       failedAttempt: false,

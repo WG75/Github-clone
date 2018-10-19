@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from './actions';
 import LoginPanel from '../../components/LoginPanel';
@@ -27,7 +28,7 @@ class LoginScreen extends React.Component<Props> {
       onLogin,
       authTypeUsed,
     } = this.props;
-    return (
+    return !user ? (
       <LoginPanel
         title="Github Insights"
         hint="Please login to get insights for your github account."
@@ -40,6 +41,8 @@ class LoginScreen extends React.Component<Props> {
         authTypeUsed={authTypeUsed}
         onSubmit={onLogin}
       />
+    ) : (
+      <Redirect to="/" />
     );
   }
 }

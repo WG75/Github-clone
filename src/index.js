@@ -9,7 +9,7 @@ import './main.css';
 
 render(
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>,
   document.getElementById('root'),
 );
