@@ -1,0 +1,25 @@
+.psuedo-element {
+  position: relative;
+  background: var(--shade-of-white);
+  overflow: hidden;
+  margin: 7px auto;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.psuedo-element::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  animation: loading 1s infinite alternate-reverse ;
+  background: lightgrey;
+}

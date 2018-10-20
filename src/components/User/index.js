@@ -2,7 +2,6 @@
 
 import React from 'react';
 import './User.css';
-
 type Props = {
   user: any,
 };

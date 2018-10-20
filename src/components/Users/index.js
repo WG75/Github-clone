@@ -2,6 +2,8 @@
 
 import React from 'react';
 import User from '../User';
+import PsuedoUser from '../User/PsuedoUser';
+
 import './Users.css';
 
 type Props = {
@@ -22,7 +24,7 @@ const Users = ({
           ? 'no result found'
           : null}
 
-      {loading && [...Array(10)].map(i => <span>loading......</span>)}
+      {loading && [...Array(10)].map(i => <PsuedoUser />)}
     </ul>
   </section>
 );

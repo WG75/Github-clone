@@ -128,6 +128,7 @@ class HomeScreen extends React.Component<Props> {
                 avatar_url: 'https://avatars2.githubusercontent.com/u/19857965?v=4',
               },
             ]}
+            loading
           />
         </div>
       </div>
