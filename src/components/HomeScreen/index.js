@@ -117,19 +117,7 @@ class HomeScreen extends React.Component<Props> {
               },
             ]}
           />
-          <Users
-            users={[
-              {
-                name: 'wleed gamal',
-                login: 'wg75',
-                public_repos: 21,
-                followers: 30,
-                country: 'Egypt',
-                avatar_url: 'https://avatars2.githubusercontent.com/u/19857965?v=4',
-              },
-            ]}
-            loading
-          />
+          <Users users={[]} />
         </div>
       </div>
     ) : (

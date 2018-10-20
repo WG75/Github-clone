@@ -1,7 +1,10 @@
 .users {
+  flex: 1;
   padding: 25px;
   max-height: calc(100vh - 78px);
   overflow: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .users__list {

@@ -3,16 +3,10 @@
 import React from 'react';
 import PsuedoElement from '../PsuedoElemnt';
 
-type Props = {
-  width: number,
-  height: number,
-  borderRadius: number,
-};
-
-const PsuedoUser = ({ width, height, borderRadius }: Props) => (
+const PsuedoUser = () => (
   <li className="user">
     <div className="user__info">
-      <PsuedoElement  width={150} height={150} borderRadius={50} />
+      <PsuedoElement width={150} height={150} borderRadius={50} />
       <PsuedoElement className="user__name" width={150} height={20} borderRadius={3} />
       <PsuedoElement className="user__tag" width={50} height={20} borderRadius={3} />
     </div>

@@ -1,0 +1,15 @@
+.no-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-results__image {
+  width: 100px;
+}
+
+.no-results__hint {
+  color: var(--shade-of-black);
+  font-size: 22px;
+}
