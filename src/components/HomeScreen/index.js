@@ -11,11 +11,12 @@ type Props = {
 };
 
 class HomeScreen extends React.Component<Props> {
+  state = {focused: true}
   render() {
     const { user } = this.props;
     return user ? (
       <div className="home-container">
-        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} />
+        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} focused={this.state.focused} />
         <div className="home__content">
           <SideBar
             repos={[{ name: 'AJAX' }, { name: 'quizzo' }]}

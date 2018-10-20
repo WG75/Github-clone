@@ -11,6 +11,10 @@
   font-weight: bold;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button--is_primary {
   background: var(--shade-of-blue);
   color: var(--shade-of-black);

@@ -3,6 +3,7 @@
   padding: 10px 70px;
   background: var(--shade-of-black);
   color: var(--shade-of-white);
+  position: relative;
 }
 
 .nav__user-container,
@@ -22,6 +23,21 @@
 
 .nav__logo-text {
   font-size: 22px;
+}
+
+.nav__search {
+  transition-property: top, left;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: calc(50% + 175px);
+  top: calc(100vh / 2);
+}
+
+.nav__search--is-focused {
+  left: 50%;
+  top: 50%;
 }
 
 .nav__user-avatar {

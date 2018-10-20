@@ -1,0 +1,29 @@
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search__input {
+  padding: 15px 10px;
+  border: none;
+  width: 500px;
+  background: #ffffff;
+  border: 2px solid var(--shade-of-black);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search__input:focus {
+  outline: none;
+}
+.search__icon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+}
+
+::-webkit-search-cancel-button {
+  display: none;
+}

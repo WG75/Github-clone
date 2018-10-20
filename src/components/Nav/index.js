@@ -3,15 +3,17 @@
 import React, { type Node } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
+import SearchInput from '../SearchInput';
 import './Nav.css';
 
 type Props = {
   avatar: string,
   username: string,
   admin: boolean,
+  focused: boolean,
 };
 
-const Nav = ({ avatar, username, admin }: Props) => (
+const Nav = ({ avatar, username, admin, focused }: Props) => (
   <nav className="nav">
     <div className="nav__logo-container">
       <img
@@ -20,6 +22,20 @@ const Nav = ({ avatar, username, admin }: Props) => (
         alt="github logo"
       />
       <h1 className="nav__logo-text">Github Insights</h1>
+    </div>
+
+    <div className={`nav__search ${focused ? 'nav__search--is-focused' : ''}`}>
+      <SearchInput
+        onChange={() => {
+          console.log('changed');
+        }}
+        onFocus={() => {
+          console.log('focused');
+        }}
+        onBlur={() => {
+          console.log('blured');
+        }}
+      />
     </div>
 
     <div className="nav__right">
