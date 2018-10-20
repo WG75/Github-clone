@@ -1,0 +1,35 @@
+.user {
+  padding: 10px;
+  text-align: center;
+  min-width: 250px;
+  background: #f1f1f1;
+  color: var(--shade-of-black);
+  border-radius: 5px;
+}
+
+.user__info {
+}
+
+.user__avatar {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user__name {
+  margin: 10px 0;
+}
+
+.user__details {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.user__detail-label {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
+.user__detail-label b {
+}

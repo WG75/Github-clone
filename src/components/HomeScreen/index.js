@@ -4,6 +4,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Nav from '../Nav';
 import SideBar from '../SideBar';
+import Users from '../Users';
 import './HomeScreen.css';
 
 type Props = {
@@ -11,12 +12,18 @@ type Props = {
 };
 
 class HomeScreen extends React.Component<Props> {
-  state = {focused: true}
+  state = { focused: true };
+
   render() {
     const { user } = this.props;
     return user ? (
       <div className="home-container">
-        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} focused={this.state.focused} />
+        <Nav
+          avatar={user.avatar_url}
+          username={user.login}
+          admin={user.admin}
+          focused={this.state.focused}
+        />
         <div className="home__content">
           <SideBar
             repos={[{ name: 'AJAX' }, { name: 'quizzo' }]}
@@ -107,6 +114,18 @@ class HomeScreen extends React.Component<Props> {
                   ],
                 },
                 created_at: '2018-10-14T16:09:05Z',
+              },
+            ]}
+          />
+          <Users
+            users={[
+              {
+                name: 'wleed gamal',
+                login: 'wg75',
+                public_repos: 21,
+                followers: 30,
+                country: 'Egypt',
+                avatar_url: 'https://avatars2.githubusercontent.com/u/19857965?v=4',
               },
             ]}
           />
