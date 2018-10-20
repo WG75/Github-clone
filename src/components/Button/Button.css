@@ -17,6 +17,17 @@
   border: 2px solid var(--shade-of-black);
 }
 
+.button--is_inverted {
+  background: var(--shade-of-black);
+  color: var(--shade-of-blue);
+  border: 2px solid var(--shade-of-blue);
+}
+
+.button--is_inverted:hover {
+  background: var(--shade-of-blue);
+  color: var(--shade-of-black);
+  border: 2px solid var(--shade-of-black);
+}
 
 .button--is_primary:hover {
   background: var(--shade-of-black);
@@ -24,8 +35,8 @@
   color: var(--shade-of-blue);
 }
 
-
-.button--is_disabled, .button--is_disabled:hover {
+.button--is_disabled,
+.button--is_disabled:hover {
   background: darkgray;
   border-color: darkgray;
   color: var(--shade-of-black);

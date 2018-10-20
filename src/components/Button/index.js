@@ -14,6 +14,7 @@ type props = {
   type?: string,
   isPrimary?: boolean,
   isSecondary?: boolean,
+  inverted?: boolean,
 };
 
 const Button = ({
@@ -26,6 +27,7 @@ const Button = ({
   type,
   isPrimary,
   isSecondary,
+  inverted,
 }: props) => (isLink ? (
   <Link
     className={`button ${isPrimary ? 'button--is_primary' : ''} ${
@@ -40,7 +42,9 @@ const Button = ({
     disabled={disabled}
     className={`button ${isPrimary ? 'button--is_primary' : ''} ${
       isSecondary ? 'button--is_secondary' : ''
-    } ${disabled ? 'button--is_disabled' : ''} ${className || ''}`}
+    } ${disabled ? 'button--is_disabled' : ''} ${
+      inverted ? 'button--is_inverted' : ''
+    } ${className || ''}`}
     onClick={onClick}
     type={type}
   >

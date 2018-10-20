@@ -1,0 +1,7 @@
+.home-container {
+}
+
+.home__content {
+  display: flex;
+  min-height: calc(100vh - 78px);
+}

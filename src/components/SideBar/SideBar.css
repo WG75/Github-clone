@@ -1,0 +1,10 @@
+.sidebar {
+  flex: 0 0 350px;
+  align-self: stretch;
+  background: var(--shade-of-black);
+  color: var(--shade-of-white);
+  border-top: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0
+}

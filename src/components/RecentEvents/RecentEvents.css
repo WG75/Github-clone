@@ -1,0 +1,14 @@
+.recent-events {
+  flex: 1;
+}
+
+.recent-events__title {
+  font-size: 16px;
+  color: var(--shade-of-blue);
+  padding-left: 15px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.recent-events__list {
+}

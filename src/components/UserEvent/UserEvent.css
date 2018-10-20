@@ -1,0 +1,10 @@
+.user-event {
+  padding: 10px;
+  background: #403f3f;
+  color: #b1b1b0;
+  margin-bottom: 1px;
+}
+
+.user-event__date {
+  color: #fff;
+}

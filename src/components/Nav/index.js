@@ -28,7 +28,9 @@ const Nav = ({ avatar, username, admin }: Props) => (
         <span className="nav__username">{username}</span>
       </div>
 
-      <Button className="nav__button">Logout</Button>
+      <Button isPrimary={false} inverted className="nav__button">
+        Logout
+      </Button>
       {admin && (
         <Button isLink to="/admin" className="nav__button">
           Admin panel
