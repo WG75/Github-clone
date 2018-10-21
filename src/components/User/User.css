@@ -6,6 +6,7 @@
   color: var(--shade-of-black);
   border-radius: 5px;
   margin: 10px;
+  list-style: none;
 }
 
 .user__info {
@@ -36,5 +37,12 @@
   justify-content: space-between;
 }
 
-.user__detail-label b {
+.user--is-transparent {
+  background: transparent;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.user--is-transparent .user__info {
+  margin-bottom: 20px;
 }

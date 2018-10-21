@@ -4,6 +4,7 @@ import loginReducer from './containers/Login/reducer';
 import reposReducer from './containers/Repos/reducer';
 import userEventsReducer from './containers/UserEvents/reducer';
 import searchResults from './containers/Search/reducer';
+import userProfileReducer from './containers/UserProfile/reducer';
 
 export default combineReducers({
   global: appReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   repos: reposReducer,
   userEvents: userEventsReducer,
   search: searchResults,
+  profile: userProfileReducer,
 });

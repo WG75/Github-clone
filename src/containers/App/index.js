@@ -1,17 +1,25 @@
 // @flow
 
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LoginScreen from '../Login';
-import HomePage from '../Home';
+import ProfileScreen from '../../components/ProfileScreen';
+
+import HomeScreen from '../../components/HomeScreen';
 
 class App extends React.Component {
   render() {
+    const { user } = this.props;
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/profile" render={() => <h1>profile</h1>} />
+          <Route exact path="/" component={() => <HomeScreen user={user} />} />
+          <Route
+            path="/profile/:profile"
+            component={props => <ProfileScreen user={user} {...props} />}
+          />
           <Route path="/login" component={LoginScreen} />
         </Switch>
       </BrowserRouter>
@@ -19,4 +27,17 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps(state: any) {
+  return {
+    user: state.global.user,
+  };
+}
+
+function mapDispatchToProps(dispatch: (() => any) => any) {
+  return {};
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);

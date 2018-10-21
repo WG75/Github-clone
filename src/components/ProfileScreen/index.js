@@ -4,28 +4,32 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Nav from '../Nav';
 import SideBar from '../SideBar';
+import UserProfile from '../../containers/UserProfile';
 import Repos from '../../containers/Repos';
-import UserEvents from '../../containers/UserEvents';
 
-import UsersResults from '../../containers/UsersResults';
-import './HomeScreen.css';
+import './ProfileScreen.css';
 
 type Props = {
   user: any,
 };
 
-class HomeScreen extends React.Component<Props> {
+class ProfileScreen extends React.Component<Props> {
+  componentWillMount() {
+    const profileName = this.props.match.params.profile;
+  }
+
   render() {
     const { user } = this.props;
+    const profileName = this.props.match.params.profile;
+
     return user ? (
       <div className="app__container">
         <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} />
         <div className="app__content">
           <SideBar>
-            <Repos />
-            <UserEvents />
+            <UserProfile className={"user--is-transparent"} profileName={profileName} />
+            <Repos profile={profileName} />
           </SideBar>
-          <UsersResults />
         </div>
       </div>
     ) : (
@@ -34,4 +38,4 @@ class HomeScreen extends React.Component<Props> {
   }
 }
 
-export default HomeScreen;
+export default ProfileScreen;

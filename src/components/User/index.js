@@ -1,14 +1,18 @@
 // @flow
 
 import React from 'react';
+import PsuedoUser from './PsuedoUser';
 import './User.css';
 
 type Props = {
   user: any,
+  className?: string,
 };
 
-const User = ({ user }: Props) => (
-  <li className="user">
+const User = ({ user, loading, className }: Props) => (loading ? (
+  <PsuedoUser transparent />
+) : user ? (
+  <li className={`user ${className || ''}`}>
     <div className="user__info">
       <img src={user.avatar_url} alt="user__avatar" className="user__avatar" />
       <span className="user__tag">
@@ -35,6 +39,6 @@ const User = ({ user }: Props) => (
       </span>
     </div>
   </li>
-);
+) : null);
 
 export default User;
