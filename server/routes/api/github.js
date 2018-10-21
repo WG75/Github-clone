@@ -22,7 +22,7 @@ router.get('/:user/events', async (req, res) => {
     const response = await axios.get(`${githubUrl}/users/${user}/events`);
     const acceptedEvents = ['WatchEvent', 'ForkEvent', 'PushEvent'];
     const events = response.data.filter(event => acceptedEvents.includes(event.type));
-    
+
     return res.json({ events });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;
@@ -32,9 +32,9 @@ router.get('/:user/events', async (req, res) => {
 
 router.get('/search/users', async (req, res) => {
   try {
-    const query = req.query.q;
+    const { q, page } = req.query;
 
-    const response = await axios.get(`${githubUrl}/search/users?q=${query}`);
+    const response = await axios.get(`${githubUrl}/search/users?q=${q}&page=${page}`);
     const results = response.data.items;
 
     return res.json({ results });
