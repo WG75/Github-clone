@@ -21,8 +21,9 @@
   border: 2px solid #fff;
 }
 
-.user__name {
+.user__tag {
   margin: 10px 0;
+  font-weight: bold;
 }
 
 .user__details {

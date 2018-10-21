@@ -1,18 +1,13 @@
-import {
-  LOADING_SEARCH_RESULTS,
-  SUCCESS_SEARCH,
-  ERROR_SEARCH,
-  CLEAR_SEARCH_RESULTS,
-} from './constants';
+import { LOADING_SEARCH_RESULTS, SUCCESS_SEARCH, ERROR_SEARCH } from './constants';
 
 const initialState = {
   loading: false,
   error: false,
   success: false,
   results: [],
-  query: null,
+  isFocused: false,
+  query: '',
   page: 0,
-  lastPage: null,
 };
 
 const searchResults = (state = initialState, action) => {
@@ -23,8 +18,6 @@ const searchResults = (state = initialState, action) => {
         loading: true,
         error: false,
         success: false,
-        query: action.query,
-        results: action.query !== state.query ? [] : state.results,
       };
 
     case ERROR_SEARCH:
@@ -43,23 +36,6 @@ const searchResults = (state = initialState, action) => {
         loading: false,
         results: action.page > state.page ? state.results.concat(action.results) : action.results,
         page: action.page,
-        lastPage: action.pagination
-          ? action.pagination.last
-            ? action.pagination.last.page
-            : null
-          : null,
-      };
-
-    case CLEAR_SEARCH_RESULTS:
-      return {
-        ...state,
-        loading: false,
-        error: false,
-        success: false,
-        query: '',
-        page: 0,
-        lastPage: null,
-        results: [],
       };
 
     default:

@@ -2,7 +2,7 @@
   position: relative;
   background: var(--shade-of-white);
   overflow: hidden;
-  margin: 7px auto;
+  margin: 10px auto;
 }
 
 @keyframes loading {
@@ -16,9 +16,10 @@
 }
 
 .psuedo-element__inner {
+  display: inline;
   position: absolute;
   width: 25%;
   height: 100%;
-  animation: loading 1s infinite alternate-reverse ;
+  animation: loading 1s infinite alternate-reverse;
   background: lightgrey;
 }

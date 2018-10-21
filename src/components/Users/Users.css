@@ -10,5 +10,6 @@
 .users__list {
   display: flex;
   justify-content: center;
+  align-items: self-start;
   flex-wrap: wrap;
 }

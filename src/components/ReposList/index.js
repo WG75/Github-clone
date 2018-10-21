@@ -39,7 +39,7 @@ const ReposList = ({ repos, loading, error }: Props) => (
     )}
 
     {loading
-      && [...Array(4)].map(i => (
+      && [...Array(5)].map(i => (
         <PsuedoElemnt
           className="repos__psuedo-element"
           width={300}

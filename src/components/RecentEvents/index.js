@@ -39,6 +39,7 @@ const RecentEvents = ({ userEvents, loading, error }: Props) => (
     {loading
       && [...Array(3)].map(i => (
         <PsuedoElemnt
+        className="recent-events__psuedo-element"
           width={300}
           height={70}
           borderRadius={3}

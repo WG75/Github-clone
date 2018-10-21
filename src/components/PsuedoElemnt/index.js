@@ -21,7 +21,7 @@ const PsuedoElement = ({
   outerBackground,
 }: Props) => (
   <div
-    className="psuedo-element"
+    className={`psuedo-element ${className || ''}`}
     style={{
       width,
       height,

@@ -11,22 +11,59 @@ type Props = {
   loading: boolean,
   error: boolean,
   success: boolean,
-  isFocused?: boolean,
   withResults?: boolean,
   query: string,
-  page: number,
+  lastPage: number,
   onChnage: (value: string, page: number) => void,
   onFocus: () => void,
   onBlur: () => void,
 };
 
 class Search extends React.Component<Props> {
+  delayTimer: TimeoutID;
+
+  handleOnBlur() {
+    const {
+      results, onBlur, loading, query,
+    } = this.props;
+    if (results.length > 0 || loading || query) return;
+
+    if (onBlur) {
+      onBlur();
+    }
+  }
+
+  handleOnFocus() {
+    const {
+      results, onFocus, loading, query,
+    } = this.props;
+    if (results.length > 0 || loading || query) return;
+
+    if (onFocus) {
+      onFocus();
+    }
+  }
+
+  handleOnChange(query) {
+    clearTimeout(this.delayTimer);
+
+    this.delayTimer = setTimeout(() => {
+      this.props.onChnage(query, 1);
+    }, 500);
+  }
+
   render() {
     const {
       results, loading, error, onChnage, onFocus, onBlur,
     } = this.props;
 
-    return <SearchInput onChange={query => onChnage(query, 1)} onFocus={onFocus} onBlur={onBlur} />;
+    return (
+      <SearchInput
+        onChange={this.handleOnChange.bind(this)}
+        onFocus={this.handleOnFocus.bind(this)}
+        onBlur={this.handleOnBlur.bind(this)}
+      />
+    );
   }
 }
 
@@ -36,9 +73,9 @@ function mapStateToProps(state) {
     results: state.search.results,
     loading: state.search.loading,
     success: state.search.success,
-    isFocused: state.search.isFocused,
     query: state.search.query,
     page: state.search.page,
+    lastPage: state.search.lastPage,
   };
 }
 

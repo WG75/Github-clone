@@ -20,6 +20,9 @@
   padding: 25px;
 }
 
+.recent-events__psuedo-element {
+  margin: 20px auto;
+}
 
 .recent-events__feedback--has-error {
   color: #dddddd;

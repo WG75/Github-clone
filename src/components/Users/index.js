@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import type { Node } from 'react';
 import User from '../User';
 import PsuedoUser from '../User/PsuedoUser';
 import NoResults from '../NoResults';
@@ -9,14 +10,14 @@ import './Users.css';
 type Props = {
   users: Array<any>,
   onScroll: () => void,
-  page: number,
   loading: boolean,
+  scrollableRef: () => void,
 };
 
 const Users = ({
-  users, onScroll, page, loading,
+  users, onScroll, page, loading, query, scrollableRef,
 }: Props) => (
-  <section className="users">
+  <section ref={scrollableRef} className="users" onScroll={onScroll}>
     {users.length > 0 ? (
       <ul className="users__list">
         {users.map(user => (
@@ -32,7 +33,7 @@ const Users = ({
         ))}
       </ul>
     ) : null}
-    {!loading ? <NoResults /> : null}
+    {users.length === 0 && !loading && query ? <NoResults /> : null}
   </section>
 );
 

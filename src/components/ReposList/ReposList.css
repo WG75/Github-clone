@@ -16,10 +16,6 @@
   border-radius: 3px;
 }
 
-.psuedo-element {
-  margin-bottom: 20px;
-}
-
 .repo__repo-name {
   margin: 10px;
   font-weight: normal;
@@ -37,6 +33,10 @@
   padding-left: 15px;
   margin: 0 0 20px;
   text-align: center;
+}
+
+.repos__psuedo-element {
+  margin: 20px auto;
 }
 
 .repos-list__feedback {

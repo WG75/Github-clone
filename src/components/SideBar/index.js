@@ -5,14 +5,7 @@ import Repos from '../../containers/Repos';
 import UserEvents from '../../containers/UserEvents';
 import './SideBar.css';
 
-type Props = {
-  repos: Array<any>,
-  recentAactivity: Array<any>,
-};
-
-const SideBar = ({
-  repos, recentAactivity, loading, show,
-}: Props) => (
+const SideBar = () => (
   <aside className="sidebar">
     <Repos />
 
