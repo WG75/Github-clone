@@ -11,7 +11,7 @@ router.post('/github', async (req, res) => {
     return res.json({ user });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;
-    res.status(statusCode).json({ authenticated: false });
+    return res.status(statusCode).json({ authenticated: false });
   }
 });
 
