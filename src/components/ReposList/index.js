@@ -16,7 +16,7 @@ const ReposList = ({ repos, loading, error }: Props) => (
     <h3 className="repos__title">Repositories</h3>
     {repos.length > 0 ? (
       <ul className="repos__list">
-        {repos.map(repo => (
+        {repos.slice(0, 5).map(repo => (
           <li className="repos__item">
             {repo.private ? (
               <RepoIconPrivate className="repo__icon" fill="#fff" />

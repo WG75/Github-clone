@@ -4,7 +4,6 @@ import apiService from '../../config/apiService';
 
 const getRepos = user => async (dispatch) => {
   try {
-    throw "dsd"
     dispatch(loading());
     const response = await axios.get(`${apiService}/github/${user}/repos`);
     dispatch(reposSuccess(response.data.repos));
