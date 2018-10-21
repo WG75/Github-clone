@@ -10,11 +10,11 @@ type Props = {
   recentAactivity: Array<any>,
 };
 
-const SideBar = ({ repos, recentAactivity }: Props) => (
+const SideBar = ({ repos, recentAactivity, loading, show }: Props) => (
   <aside className="sidebar">
-    <ReposList repos={repos} />
+    <ReposList loading={loading} repos={show ? repos : []} />
 
-    <RecentEvents userEvents={recentAactivity} />
+    <RecentEvents loading={loading} userEvents={show ? recentAactivity : []} />
   </aside>
 );
 

@@ -3,6 +3,9 @@
   background: #403f3f;
   color: #b1b1b0;
   margin-bottom: 1px;
+    margin-bottom: 1px;
+    border-radius: 3%;
+    margin: 10px;
 }
 
 .user-event__date {

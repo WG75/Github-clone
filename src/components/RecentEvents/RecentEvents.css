@@ -12,3 +12,10 @@
 
 .recent-events__list {
 }
+
+.recent-events__no-events {
+  margin-top: 100px;
+  color: #dddddd;
+  background: #403f3f;
+  padding: 25px;
+}

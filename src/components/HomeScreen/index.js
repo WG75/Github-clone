@@ -12,7 +12,7 @@ type Props = {
 };
 
 class HomeScreen extends React.Component<Props> {
-  state = { focused: true };
+  state = { focused: true, loading: true, show: true };
 
   render() {
     const { user } = this.props;
@@ -26,6 +26,8 @@ class HomeScreen extends React.Component<Props> {
         />
         <div className="home__content">
           <SideBar
+          show={this.state.show}
+          loading={this.state.loading}
             repos={[{ name: 'AJAX' }, { name: 'quizzo' }]}
             recentAactivity={[
               {

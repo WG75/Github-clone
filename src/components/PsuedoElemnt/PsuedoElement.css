@@ -15,8 +15,7 @@
   }
 }
 
-.psuedo-element::after {
-  content: "";
+.psuedo-element__inner {
   position: absolute;
   width: 25%;
   height: 100%;

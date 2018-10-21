@@ -11,11 +11,19 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
+  margin: 10px;
+  background: #403f3f;
+  border-radius: 3px;
+}
+
+.psuedo-element {
+  margin-bottom: 20px;
 }
 
 .repo__repo-name {
   margin: 10px;
   font-weight: normal;
+  text-transform: capitalize;
 }
 
 .repo__icon {
@@ -28,4 +36,11 @@
   padding-left: 15px;
   margin: 0 0 20px;
   text-align: center;
+}
+
+.repos-list__no-repos {
+  margin-top: 100px;
+  color: #dddddd;
+  background: #403f3f;
+  padding: 25px;
 }
