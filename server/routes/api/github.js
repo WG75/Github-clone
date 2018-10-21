@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const axios = require('axios');
+var parse = require('parse-link-header');
 
 const githubUrl = 'https://api.github.com';
 
@@ -8,7 +9,6 @@ router.get('/:user/repos', async (req, res) => {
     const user = req.params.user;
     const response = await axios.get(`${githubUrl}/users/${user}/repos`);
     const repos = response.data;
-
     return res.json({ repos });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;
@@ -35,9 +35,10 @@ router.get('/search/users', async (req, res) => {
     const { q, page } = req.query;
 
     const response = await axios.get(`${githubUrl}/search/users?q=${q}&page=${page}`);
-    const results = response.data.items;
 
-    return res.json({ results });
+    const results = response.data.items;
+    const pagination = parse(response.headers.link)
+    return res.json({ results, pagination });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;
     return res.status(statusCode).json({ error: err.message });
