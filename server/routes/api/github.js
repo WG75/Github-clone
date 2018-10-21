@@ -20,8 +20,9 @@ router.get('/:user/events', async (req, res) => {
   try {
     const user = req.params.user;
     const response = await axios.get(`${githubUrl}/users/${user}/events`);
-    const events = response.data;
-
+    const acceptedEvents = ['WatchEvent', 'ForkEvent', 'PushEvent'];
+    const events = response.data.filter(event => acceptedEvents.includes(event.type));
+    
     return res.json({ events });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;

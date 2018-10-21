@@ -29,7 +29,7 @@ const ReposList = ({ repos, loading, error }: Props) => (
       </ul>
     ) : null}
     {repos.length === 0 && !loading && !error ? (
-      <p className=".repos-list__feedback">It looks like you don't have any repostories.</p>
+      <p className="repos-list__feedback">It looks like you don't have any repostories.</p>
     ) : null}
 
     {error && (

@@ -9,14 +9,17 @@ type Props = {
 };
 
 const userEvent = ({ userEvent }: Props) => {
-  const branch = userEvent.payload.ref.slice(11);
+  const actiontype = userEvent.type === 'WatchEvent'
+    ? 'starred'
+    : userEvent.type === 'ForkEvent'
+      ? 'forked'
+      : 'pushed';
   const { repo, created_at } = userEvent;
+
   return (
     <li className="user-event">
       <p className="user-event__description">
-        {`        You pushed branch
-        ${branch}
-        to
+        {`You ${actiontype} 
 `}
         <b className="user-event__repo-name">{repo.name}</b>
       </p>
