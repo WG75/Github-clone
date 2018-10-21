@@ -16,7 +16,9 @@ const SearchInput = ({ onChange, onFocus, onBlur }: Props) => (
     <input
       className="search__input"
       type="search"
-      onChange={onChange}
+      onChange={(e) => {
+        onChange(e.target.value);
+      }}
       onFocus={onFocus}
       onBlur={onBlur}
       placeholder="Search users"
