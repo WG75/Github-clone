@@ -11,7 +11,7 @@ type Props = {
   loading: boolean,
 };
 
-const ReposList = ({ repos, loading }: Props) => (
+const ReposList = ({ repos, loading, error }: Props) => (
   <section className="repos">
     <h3 className="repos__title">Repositories</h3>
     {repos.length > 0 ? (
@@ -27,10 +27,19 @@ const ReposList = ({ repos, loading }: Props) => (
           </li>
         ))}
       </ul>
-    ) : !loading ? (
-      <p className="repos-list__no-repos">It looks like you don't have any repostories.</p>
-    ) : (
-      [...Array(4)].map(i => (
+    ) : null}
+    {repos.length === 0 && !loading && !error ? (
+      <p className=".repos-list__feedback">It looks like you don't have any repostories.</p>
+    ) : null}
+
+    {error && (
+      <p className="repos-list__feedback repos-list__feedback--has-error">
+        Something went wrong, please refresh the page.
+      </p>
+    )}
+
+    {loading
+      && [...Array(4)].map(i => (
         <PsuedoElemnt
           className="repos__psuedo-element"
           width={300}
@@ -39,8 +48,7 @@ const ReposList = ({ repos, loading }: Props) => (
           outerBackground="#403f3f"
           innerBackground="#3c3a3a"
         />
-      ))
-    )}
+      ))}
   </section>
 );
 

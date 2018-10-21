@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import ReposList from '../ReposList';
+import Repos from '../../containers/Repos';
 import RecentEvents from '../RecentEvents';
 import './SideBar.css';
 
@@ -10,9 +10,11 @@ type Props = {
   recentAactivity: Array<any>,
 };
 
-const SideBar = ({ repos, recentAactivity, loading, show }: Props) => (
+const SideBar = ({
+  repos, recentAactivity, loading, show,
+}: Props) => (
   <aside className="sidebar">
-    <ReposList loading={loading} repos={show ? repos : []} />
+    <Repos />
 
     <RecentEvents loading={loading} userEvents={show ? recentAactivity : []} />
   </aside>

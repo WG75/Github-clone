@@ -38,9 +38,14 @@
   text-align: center;
 }
 
-.repos-list__no-repos {
+.repos-list__feedback {
   margin-top: 100px;
   color: #dddddd;
   background: #403f3f;
   padding: 25px;
+}
+
+.repos-list__feedback--has-error {
+  color: #dddddd;
+  background: #ea3c3c;
 }
