@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Repos from '../../containers/Repos';
-import RecentEvents from '../RecentEvents';
+import UserEvents from '../../containers/UserEvents';
 import './SideBar.css';
 
 type Props = {
@@ -16,7 +16,7 @@ const SideBar = ({
   <aside className="sidebar">
     <Repos />
 
-    <RecentEvents loading={loading} userEvents={show ? recentAactivity : []} />
+    <UserEvents />
   </aside>
 );
 
