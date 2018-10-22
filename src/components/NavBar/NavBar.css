@@ -6,6 +6,14 @@
   position: relative;
 }
 
+.nav__link {
+  color: var(--shade-of-white);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav__user-container,
 .nav__logo-container,
 .nav__right,

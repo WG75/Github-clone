@@ -1,6 +1,7 @@
 .users {
   max-height: 100%;
   overflow: auto;
+  padding: 20px 0
 }
 
 .users__list {

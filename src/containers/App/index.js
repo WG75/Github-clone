@@ -8,14 +8,15 @@ import LoginScreen from '../Login';
 import ProfileScreen from '../../components/ProfileScreen';
 
 import HomeScreen from '../../components/HomeScreen';
+import { logout } from './actions';
 
 class App extends React.Component {
   render() {
-    const { user } = this.props;
+    const { user, onLogout } = this.props;
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={() => <HomeScreen user={user} />} />
+          <Route exact path="/" component={() => <HomeScreen user={user}  />} />
           <Route
             path="/profile/:profile"
             component={props => <ProfileScreen user={user} {...props} />}
@@ -34,7 +35,7 @@ function mapStateToProps(state: any) {
 }
 
 function mapDispatchToProps(dispatch: (() => any) => any) {
-  return {};
+  return { onLogout: () => dispatch(logout()) };
 }
 
 export default connect(

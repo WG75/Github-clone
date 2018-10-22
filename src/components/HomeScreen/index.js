@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Nav from '../Nav';
+import Nav from '../../containers/Nav';
 import SideBar from '../SideBar';
 import Repos from '../../containers/Repos';
 import UserEvents from '../../containers/UserEvents';
@@ -16,10 +16,10 @@ type Props = {
 
 class HomeScreen extends React.Component<Props> {
   render() {
-    const { user } = this.props;
+    const { user, onLogout } = this.props;
     return user ? (
       <div className="app__container">
-        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} />
+        <Nav />
         <div className="app__content">
           <SideBar>
             <Repos />

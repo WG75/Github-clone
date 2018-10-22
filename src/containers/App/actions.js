@@ -1,7 +1,10 @@
-import { LOAD_USER } from './constants';
+import { LOAD_USER, LOGOUT } from './constants';
 
 const loadUser = user => ({
   type: LOAD_USER,
   user,
 });
-export { loadUser };
+
+
+const logout = () => ({type: LOGOUT})
+export { loadUser, logout };

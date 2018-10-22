@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Nav from '../Nav';
+import Nav from '../../containers/Nav';
 import SideBar from '../SideBar';
 import UserProfile from '../../containers/UserProfile';
 import Repos from '../../containers/Repos';
@@ -20,23 +20,20 @@ class ProfileScreen extends React.Component<Props> {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, onLogout } = this.props;
     const profileName = this.props.match.params.profile;
 
     return user ? (
       <div className="app__container">
-        <Nav avatar={user.avatar_url} withResults username={user.login} admin={user.admin} />
+        <Nav withResults/>
         <div className="app__content">
           <SideBar>
-            <UserProfile className="user--is-profile" profileName={profileName} isProfile/>
+            <UserProfile className="user--is-profile" profileName={profileName} isProfile />
             <Repos profile={profileName} />
           </SideBar>
           <div className="app__main">
-          <Contributions profileName={profileName}/>
-
+            <Contributions profileName={profileName} />
           </div>
-
-
         </div>
       </div>
     ) : (

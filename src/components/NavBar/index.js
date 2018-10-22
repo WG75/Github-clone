@@ -4,12 +4,11 @@ import React, { type Node } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Search from '../../containers/Search';
-import './Nav.css';
+import './NavBar.css';
 
 type Props = {
-  avatar: string,
-  username: string,
-  admin: boolean,
+  user: any,
+  onLogout: void => void,
   withResults: boolean,
 };
 
@@ -36,19 +35,19 @@ class Nav extends React.Component<Props, State> {
 
   render() {
     const { searchIsFocused } = this.state;
-    const {
-      avatar, username, admin, withResults,
-    } = this.props;
+    const { user, withResults, onLogout } = this.props;
 
     return (
       <nav className="nav">
         <div className="nav__logo-container">
-          <img
-            className="nav__logo-image"
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/github-octocat.svg"
-            alt="github logo"
-          />
-          <h1 className="nav__logo-text">Github Insights</h1>
+          <Link className="nav__link" to="/">
+            <img
+              className="nav__logo-image"
+              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/github-octocat.svg"
+              alt="github logo"
+            />
+            <h1 className="nav__logo-text">Github Insights</h1>
+          </Link>
         </div>
 
         <div
@@ -66,15 +65,16 @@ class Nav extends React.Component<Props, State> {
         </div>
 
         <div className="nav__right">
-          <div className="nav__user-container">
-            <img className="nav__user-avatar" src={avatar} alt="user profile picture" />
-            <span className="nav__username">{username}</span>
-          </div>
-
-          <Button isPrimary={false} inverted className="nav__button">
+          <Link className="nav__link" to={`/profile/${user.login}`}>
+            <div className="nav__user-container">
+              <img className="nav__user-avatar" src={user.avatar_url} alt="user profile picture" />
+              <span className="nav__username">{user.login}</span>
+            </div>
+          </Link>
+          <Button isPrimary={false} inverted className="nav__button" onClick={onLogout}>
             Logout
           </Button>
-          {admin && (
+          {user.admin && (
             <Button isLink to="/admin" className="nav__button">
               Admin panel
             </Button>
