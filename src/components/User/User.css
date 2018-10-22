@@ -38,9 +38,11 @@
 }
 
 .user--is-profile {
-  background: transparent;
   margin-bottom: 30px;
-  color: #fff;
+}
+
+.user--is-profile.user--is-psuedo {
+  background: #403f3f;
 }
 
 .user__link {
@@ -54,5 +56,4 @@
 
 .user--is-profile .user__link {
   margin-bottom: 20px;
-  color: white;
 }

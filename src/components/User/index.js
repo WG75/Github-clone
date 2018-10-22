@@ -34,7 +34,7 @@ const User = ({ user, loading, className, isProfile }: Props) => (loading ? (
       <span className="user__detail-label">
         <b>Score:</b>
         {' '}
-        {Math.round(user.score)}
+        {Math.round(user.score) || 0}
       </span>
       <span className="user__detail-label">
         <b>Type:</b>

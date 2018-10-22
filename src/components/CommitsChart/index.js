@@ -8,7 +8,7 @@ import 'react-calendar-heatmap/dist/styles.css';
 import './CommitsChart.css';
 
 type Props = {
-  contribuations: any,
+  contributions: Array<{date: string, count: number}>,
   loading: boolean,
   error: boolean,
 };
@@ -22,7 +22,7 @@ const CommitsChart = ({ contributions, loading, error }: Props) => {
     <Psuedo />
   ) : (
     <section className="contributions">
-      <h3 className="contributions__title">contributions</h3>
+      <h3 className="contributions__title">Contributions</h3>
 
       <CalendarHeatmap
         showOutOfRangeDays

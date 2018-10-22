@@ -12,6 +12,7 @@ type Props = {
   onScroll: () => void,
   loading: boolean,
   scrollableRef: () => void,
+  query: string
 };
 
 const Users = ({

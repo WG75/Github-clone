@@ -1,21 +1,16 @@
 .contributions {
-  flex: 1;
-  flex-direction: column;
   padding: 25px;
-  max-height: calc(100vh - 78px);
-  overflow: auto;
-  display: flex;
+  width: 100%;
 }
 
-.react-calendar-heatmap .color-scale-1 {
-  fill: #d6e685;
+.contributions__title {
+  color: var(--shade-of-black);
+  margin-bottom: 30px;
+  font-size: 22px;
+  margin-left: 0;
 }
-.react-calendar-heatmap .color-scale-2 {
-  fill: #8cc665;
-}
-.react-calendar-heatmap .color-scale-3 {
-  fill: #44a340;
-}
-.react-calendar-heatmap .color-scale-4 {
-  fill: #1e6823;
+
+.contributions--is-psuedo {
+  width: 100%;
+  background: #F1F1F2;
 }

@@ -5,3 +5,11 @@
   display: flex;
   min-height: calc(100vh - 78px);
 }
+
+.app__main {
+  flex: 1;
+  max-height: calc(100vh - 78px);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}

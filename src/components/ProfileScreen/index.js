@@ -28,11 +28,15 @@ class ProfileScreen extends React.Component<Props> {
         <Nav avatar={user.avatar_url} withResults username={user.login} admin={user.admin} />
         <div className="app__content">
           <SideBar>
-            <UserProfile className="user--is-transparent" profileName={profileName} />
+            <UserProfile className="user--is-profile" profileName={profileName} isProfile/>
             <Repos profile={profileName} />
           </SideBar>
-
+          <div className="app__main">
           <Contributions profileName={profileName}/>
+
+          </div>
+
+
         </div>
       </div>
     ) : (

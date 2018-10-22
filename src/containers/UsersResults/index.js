@@ -25,11 +25,11 @@ class UsersResults extends React.Component<Props> {
     } = this.props;
     const moreThan500pxToBottom = this.scollableContainer.scrollTop + this.scollableContainer.clientHeight
       < this.scollableContainer.scrollHeight - 500;
-    console.log(query);
+
     if (page + 1 > lastPage || moreThan500pxToBottom || loading) {
-    } else {
-      onScroll(query, page + 1);
+      return null;
     }
+    onScroll(query, page + 1);
   }
 
   render() {

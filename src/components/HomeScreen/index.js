@@ -25,7 +25,9 @@ class HomeScreen extends React.Component<Props> {
             <Repos />
             <UserEvents />
           </SideBar>
-          <UsersResults />
+          <div className="app__main">
+            <UsersResults />
+          </div>
         </div>
       </div>
     ) : (

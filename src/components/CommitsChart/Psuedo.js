@@ -1,12 +1,11 @@
 // @flow
 import React from 'react';
 import PusedoElement from '../PsuedoElemnt';
-
 const Psuedo = () => (
-  <section>
-    <PusedoElement borderRadius={3} width={100} height={30} />
+  <section className="contributions">
+    <PusedoElement className="contributions__title contributions--is-psuedo" borderRadius={0} width={150} height={30} />
 
-    <PusedoElement borderRadius={3} width={700} height={350} />
+    <PusedoElement className="contributions--is-psuedo" borderRadius={0} height={200} />
   </section>
 );
 
