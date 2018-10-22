@@ -16,6 +16,19 @@ router.get('/:user/repos', async (req, res) => {
   }
 });
 
+router.get('/:user/statistics', async (req, res) => {
+  try {
+    const user = req.params.user;
+    const response = await axios.get(`https://github-contributions-api.now.sh/v1/${user}`);
+    const contributions = response.data.contributions;
+    return res.json({ contributions });
+  } catch (err) {
+    const statusCode = err.response ? err.response.status : 500;
+    return res.status(statusCode).json({ error: err.message });
+  }
+});
+
+
 router.get('/users/:user', async (req, res) => {
   try {
     const user = req.params.user;
