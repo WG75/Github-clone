@@ -1,18 +1,22 @@
 // @flow
 
 import React from 'react';
+import {Link} from "react-router-dom";
 import PsuedoUser from './PsuedoUser';
 import './User.css';
 
 type Props = {
   user: any,
   className?: string,
+  isProfile?: boolean
 };
 
-const User = ({ user, loading, className }: Props) => (loading ? (
-  <PsuedoUser transparent />
+const User = ({ user, loading, className, isProfile }: Props) => (loading ? (
+  <PsuedoUser isProfile={isProfile} />
 ) : user ? (
+  
   <li className={`user ${className || ''}`}>
+  <Link className="user__link" to={`/profile/${user.login}`}>
     <div className="user__info">
       <img src={user.avatar_url} alt="user__avatar" className="user__avatar" />
       <span className="user__tag">
@@ -38,6 +42,7 @@ const User = ({ user, loading, className }: Props) => (loading ? (
         {user.type}
       </span>
     </div>
+    </Link>
   </li>
 ) : null);
 

@@ -3,7 +3,6 @@
   text-align: center;
   min-width: 250px;
   background: #f1f1f1;
-  color: var(--shade-of-black);
   border-radius: 5px;
   margin: 10px;
   list-style: none;
@@ -18,6 +17,7 @@
 
 .user__avatar {
   width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid #fff;
 }
@@ -37,12 +37,22 @@
   justify-content: space-between;
 }
 
-.user--is-transparent {
+.user--is-profile {
   background: transparent;
   margin-bottom: 30px;
   color: #fff;
 }
 
-.user--is-transparent .user__info {
+.user__link {
+  text-decoration: none;
+  color: #484848;
+}
+
+.user--is-profile .user__info {
   margin-bottom: 20px;
+}
+
+.user--is-profile .user__link {
+  margin-bottom: 20px;
+  color: white;
 }
