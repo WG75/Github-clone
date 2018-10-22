@@ -22,6 +22,12 @@ class UserProfile extends React.Component<Props> {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profileName !== this.props.profileName) {
+      this.props.loadProfile(nextProps.profileName);
+    }
+  }
+
   render() {
     const { profile, loading, error } = this.props;
     return <User user={profile} loading={loading} error={error} {...this.props} />;

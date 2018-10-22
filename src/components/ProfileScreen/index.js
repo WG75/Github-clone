@@ -24,7 +24,7 @@ class ProfileScreen extends React.Component<Props> {
 
     return user ? (
       <div className="app__container">
-        <Nav avatar={user.avatar_url} username={user.login} admin={user.admin} />
+        <Nav avatar={user.avatar_url} withResults username={user.login} admin={user.admin} />
         <div className="app__content">
           <SideBar>
             <UserProfile className={"user--is-transparent"} profileName={profileName} />

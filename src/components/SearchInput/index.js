@@ -11,9 +11,12 @@ type Props = {
   onFocus: () => void,
 };
 
-const SearchInput = ({ onChange, onFocus, onBlur }: Props) => (
+const SearchInput = ({
+  onChange, onFocus, onBlur, inputRef,
+}: Props) => (
   <label className="search" htmlFor="search">
     <input
+      ref={inputRef}
       className="search__input"
       type="search"
       onChange={(e) => {

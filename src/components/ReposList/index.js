@@ -14,7 +14,7 @@ type Props = {
 const ReposList = ({ repos, loading, error }: Props) => (
   <section className="repos">
     <h3 className="repos__title">Repositories</h3>
-    {repos.length > 0 ? (
+    {repos.length > 0 && !loading ? (
       <ul className="repos__list">
         {repos.slice(0, 5).map(repo => (
           <li className="repos__item">

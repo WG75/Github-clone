@@ -22,10 +22,16 @@ class Repos extends React.Component<Props> {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile !== this.props.profile) {
+      this.props.getRepos(nextProps.profile);
+    }
+  }
+
   render() {
     const { repos, loading, error } = this.props;
 
-    return <ReposList repos={repos} loading={loading} error={error}/>;
+    return <ReposList repos={repos} loading={loading} error={error} />;
   }
 }
 
@@ -35,7 +41,6 @@ function mapStateToProps(state) {
     repos: state.repos.data,
     loading: state.repos.loading,
     error: state.repos.error,
-
   };
 }
 

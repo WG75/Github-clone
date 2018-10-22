@@ -10,6 +10,7 @@ type Props = {
   avatar: string,
   username: string,
   admin: boolean,
+  withResults: boolean,
 };
 
 type State = {
@@ -21,15 +22,23 @@ class Nav extends React.Component<Props, State> {
     searchIsFocused: false,
   };
 
-  toggleFocusState() {
+  handleOnFocus() {
     this.setState({
-      searchIsFocused: !this.state.searchIsFocused,
+      searchIsFocused: true,
+    });
+  }
+
+  handleOnBlur() {
+    this.setState({
+      searchIsFocused: false,
     });
   }
 
   render() {
     const { searchIsFocused } = this.state;
-    const { avatar, username, admin } = this.props;
+    const {
+      avatar, username, admin, withResults,
+    } = this.props;
 
     return (
       <nav className="nav">
@@ -42,10 +51,16 @@ class Nav extends React.Component<Props, State> {
           <h1 className="nav__logo-text">Github Insights</h1>
         </div>
 
-        <div className={`nav__search ${searchIsFocused ? 'nav__search--is-focused' : ''}`}>
+        <div
+          className={`nav__search ${
+            searchIsFocused || withResults ? 'nav__search--is-focused' : ''
+          }`}
+        >
           <Search
-            onFocus={this.toggleFocusState.bind(this)}
-            onBlur={this.toggleFocusState.bind(this)}
+            searchIsFocused={searchIsFocused}
+            withResults={withResults}
+            onFocus={this.handleOnFocus.bind(this)}
+            onBlur={this.handleOnBlur.bind(this)}
           />
           {' '}
         </div>
