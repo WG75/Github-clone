@@ -6,6 +6,7 @@ import {
 } from 'recharts';
 
 import Psuedo from './Psuedo';
+import "./EventsChart.css";
 
 const COLORS = [
   '#3d9cdb',
@@ -26,15 +27,13 @@ const EventsChart = ({ topUsers, loading }: Props) => (loading ? (
   <Psuedo />
 ) : (
   <section className="received-events">
-    <h3>Received events</h3>
+    <h3 className="received-events__title">Received events</h3>
     {topUsers.length > 0 && (
     <div className="received-events__chart-container">
       <PieChart className="received-events__chart" width={800} height={400}>
         <Pie
           isAnimationActive={false}
           data={topUsers}
-          cx={600}
-          cy={200}
           outerRadius={160}
           innerRadius={100}
           fill="#8884d8"
