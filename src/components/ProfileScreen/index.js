@@ -7,7 +7,7 @@ import SideBar from '../SideBar';
 import UserProfile from '../../containers/UserProfile';
 import Repos from '../../containers/Repos';
 import Contributions from '../../containers/Contributions';
-
+import ReceivedEvents from '../../containers/ReceivedEvents';
 import './ProfileScreen.css';
 
 type Props = {
@@ -25,7 +25,7 @@ class ProfileScreen extends React.Component<Props> {
 
     return user ? (
       <div className="app__container">
-        <Nav withResults/>
+        <Nav withResults />
         <div className="app__content">
           <SideBar>
             <UserProfile className="user--is-profile" profileName={profileName} isProfile />
@@ -33,6 +33,7 @@ class ProfileScreen extends React.Component<Props> {
           </SideBar>
           <div className="app__main">
             <Contributions profileName={profileName} />
+            <ReceivedEvents profileName={profileName}/>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ router.get('/:user/received_events', async (req, res) => {
 
     const sortedEvents = Object.keys(aggregatedEvents)
       .sort((a, b) => aggregatedEvents[b] - aggregatedEvents[a])
-      .map(key => ({ [key]: aggregatedEvents[key] }));
+      .map(key => ({ name: key, value: aggregatedEvents[key] }));
 
     const topTenUsers = sortedEvents.slice(0, 10);
     return res.json({ top10: topTenUsers });
