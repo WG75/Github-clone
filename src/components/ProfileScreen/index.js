@@ -6,6 +6,7 @@ import Nav from '../Nav';
 import SideBar from '../SideBar';
 import UserProfile from '../../containers/UserProfile';
 import Repos from '../../containers/Repos';
+import Contributions from '../../containers/Contributions';
 
 import './ProfileScreen.css';
 
@@ -27,9 +28,11 @@ class ProfileScreen extends React.Component<Props> {
         <Nav avatar={user.avatar_url} withResults username={user.login} admin={user.admin} />
         <div className="app__content">
           <SideBar>
-            <UserProfile className={"user--is-transparent"} profileName={profileName} />
+            <UserProfile className="user--is-transparent" profileName={profileName} />
             <Repos profile={profileName} />
           </SideBar>
+
+          <Contributions profileName={profileName}/>
         </div>
       </div>
     ) : (
