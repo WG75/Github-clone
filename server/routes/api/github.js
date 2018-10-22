@@ -28,7 +28,6 @@ router.get('/:user/statistics', async (req, res) => {
   }
 });
 
-
 router.get('/users/:user', async (req, res) => {
   try {
     const user = req.params.user;
@@ -49,6 +48,36 @@ router.get('/:user/events', async (req, res) => {
     const events = response.data.filter(event => acceptedEvents.includes(event.type));
 
     return res.json({ events });
+  } catch (err) {
+    const statusCode = err.response ? err.response.status : 500;
+    return res.status(statusCode).json({ error: err.message });
+  }
+});
+
+router.get('/:user/received_events', async (req, res) => {
+  try {
+    const user = req.params.user;
+    const response = await axios.get(`${githubUrl}/users/${user}/received_events`);
+    const events = response.data;
+
+    const aggregatedEvents = {};
+
+    events.forEach((event) => {
+      const actor = event.actor.login;
+
+      if (aggregatedEvents[actor]) {
+        aggregatedEvents[actor] = aggregatedEvents[actor] + 1;
+      } else {
+        aggregatedEvents[actor] = 1;
+      }
+    });
+
+    const sortedEvents = Object.keys(aggregatedEvents)
+      .sort((a, b) => aggregatedEvents[b] - aggregatedEvents[a])
+      .map(key => ({ [key]: aggregatedEvents[key] }));
+
+    const topTenUsers = sortedEvents.slice(0, 10);
+    return res.json({ top10: topTenUsers });
   } catch (err) {
     const statusCode = err.response ? err.response.status : 500;
     return res.status(statusCode).json({ error: err.message });
