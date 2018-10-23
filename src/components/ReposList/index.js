@@ -16,8 +16,8 @@ const ReposList = ({ repos, loading, error }: Props) => (
     <h3 className="repos__title">Repositories</h3>
     {repos.length > 0 && !loading ? (
       <ul className="repos__list">
-        {repos.slice(0, 5).map(repo => (
-          <li className="repos__item">
+        {repos.slice(0, 5).map((repo, i) => (
+          <li key={repo.name + i} className="repos__item">
             {repo.private ? (
               <RepoIconPrivate className="repo__icon" fill="#fff" />
             ) : (
@@ -41,6 +41,7 @@ const ReposList = ({ repos, loading, error }: Props) => (
     {loading
       && [...Array(5)].map(i => (
         <PsuedoElemnt
+          key={`psuedo${Math.random()}`}
           className="repos__psuedo-element"
           width={300}
           height={35}

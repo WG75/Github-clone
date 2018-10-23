@@ -19,7 +19,7 @@ const RecentEvents = ({ userEvents, loading, error }: Props) => (
     {userEvents.length > 0 ? (
       <ul className="recent-events__list">
         {userEvents.slice(0, 3).map(userEvent => (
-          <UserEvent userEvent={userEvent} />
+          <UserEvent key={Math.random()} userEvent={userEvent} />
         ))}
       </ul>
     ) : null}
@@ -39,7 +39,8 @@ const RecentEvents = ({ userEvents, loading, error }: Props) => (
     {loading
       && [...Array(3)].map(i => (
         <PsuedoElemnt
-        className="recent-events__psuedo-element"
+          key={`psuedo${Math.random()}`}
+          className="recent-events__psuedo-element"
           width={300}
           height={70}
           borderRadius={3}

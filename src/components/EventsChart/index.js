@@ -39,7 +39,7 @@ const EventsChart = ({ topUsers, loading }: Props) => (loading ? (
           fill="#8884d8"
         >
           {topUsers.map((entry, index) => (
-            <Cell fill={COLORS[index]} />
+            <Cell key={Math.random()} fill={COLORS[index]} />
           ))}
         </Pie>
         <Tooltip />

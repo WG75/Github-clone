@@ -19,7 +19,6 @@ type State = {
 
 class NavBar extends React.Component<Props, State> {
   constructor(props) {
-    console.log(props)
     super(props);
     this.state = {
       searchIsFocused: props.searchResults.length > 0 && !props.withResults,
