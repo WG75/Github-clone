@@ -3,6 +3,7 @@
   left: 50%;
   top: 50%;
   max-width: 390px;
+  min-height: 555px;
   transform: translate(-50%, -50%);
   color: var(--shade-of-black);
 }

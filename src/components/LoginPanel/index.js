@@ -124,7 +124,7 @@ export default class LoginPanel extends React.Component<Props, State> {
           {failedLogin && (
             <div className="login-panel__feedback login-panel__feedback--is_danger">
               {authTypeUsed === 'basic'
-                ? 'username or password is invalid. please try again.'
+                ? 'Username and password are invalid. Please try again'
                 : 'Token is invalid or expired, please try again with another token.'}
             </div>
           )}
