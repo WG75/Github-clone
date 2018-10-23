@@ -16,7 +16,7 @@ type Props = {
 
 class HomeScreen extends React.Component<Props> {
   render() {
-    const { user, onLogout } = this.props;
+    const { user } = this.props;
     return user ? (
       <div className="app__container">
         <Nav />

@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Search from '../../containers/Search';
@@ -72,7 +72,7 @@ class NavBar extends React.Component<Props, State> {
         <div className="nav__right">
           <Link className="nav__link" to={`/profile/${user.login}`}>
             <div className="nav__user-container">
-              <img className="nav__user-avatar" src={user.avatar_url} alt="user profile picture" />
+              <img className="nav__user-avatar" src={user.avatar_url} alt="user profile" />
               <span className="nav__username">{user.login}</span>
             </div>
           </Link>

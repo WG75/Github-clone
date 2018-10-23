@@ -12,8 +12,6 @@ type Props = {
   value: string,
 };
 
-type State = {};
-
 const TextInput = ({
   id, label, type, className, value, onChange,
 }: Props) => {

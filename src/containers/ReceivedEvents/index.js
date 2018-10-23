@@ -16,8 +16,8 @@ type Props = {
 class ReceivedEvents extends React.Component<Props> {
   componentDidMount() {
     const { getReceivedEvents, profileName } = this.props;
-    if (this.props.getReceivedEvents) {
-      this.props.getReceivedEvents(profileName);
+    if (getReceivedEvents) {
+      getReceivedEvents(profileName);
     }
   }
 

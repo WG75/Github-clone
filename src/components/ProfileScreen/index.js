@@ -15,12 +15,8 @@ type Props = {
 };
 
 class ProfileScreen extends React.Component<Props> {
-  componentWillMount() {
-    const profileName = this.props.match.params.profile;
-  }
-
   render() {
-    const { user, onLogout } = this.props;
+    const { user } = this.props;
     const profileName = this.props.match.params.profile;
 
     return user ? (

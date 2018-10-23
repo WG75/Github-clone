@@ -16,8 +16,8 @@ type Props = {
 class Contributions extends React.Component<Props> {
   componentDidMount() {
     const { getContributions, profileName } = this.props;
-    if (this.props.getContributions) {
-      this.props.getContributions(profileName);
+    if (getContributions) {
+      getContributions(profileName);
     }
   }
 

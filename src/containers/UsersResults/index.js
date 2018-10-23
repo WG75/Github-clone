@@ -34,7 +34,7 @@ class UsersResults extends React.Component<Props> {
 
   render() {
     const {
-      results, loading, error, page, query, lastPage,
+      results
     } = this.props;
 
     return (

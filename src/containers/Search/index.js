@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { searchUsers, blurSearch, focusSearch } from './actions';
+import { searchUsers} from './actions';
 import SearchInput from '../../components/SearchInput';
 import SearchResults from '../../components/SearchResults';
 
@@ -67,12 +67,6 @@ class Search extends React.Component<Props> {
 
   render() {
     const {
-      results,
-      loading,
-      error,
-      onChnage,
-      onFocus,
-      onBlur,
       withResults,
       searchIsFocused,
     } = this.props;

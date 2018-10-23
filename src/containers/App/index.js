@@ -12,7 +12,7 @@ import { logout } from './actions';
 
 class App extends React.Component {
   render() {
-    const { user, onLogout } = this.props;
+    const { user } = this.props;
     return (
       <BrowserRouter>
         <Switch>

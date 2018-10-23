@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../App/actions';
 import NavBar from '../../components/NavBar';

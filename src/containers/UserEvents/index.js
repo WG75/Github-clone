@@ -16,8 +16,8 @@ type Props = {
 class UserEvents extends React.Component<Props> {
   componentDidMount() {
     const { getUserEvents, user } = this.props;
-    if (this.props.getUserEvents) {
-      this.props.getUserEvents(user.login);
+    if (getUserEvents) {
+      getUserEvents(user.login);
     }
   }
 

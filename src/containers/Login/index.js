@@ -22,7 +22,6 @@ class LoginScreen extends React.Component<Props> {
     const {
       loading,
       error,
-      successfulAttempt,
       failedAttempt,
       user,
       onLogin,

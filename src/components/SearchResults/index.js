@@ -1,5 +1,3 @@
-// flow
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PsuedoElement from '../PsuedoElemnt';
@@ -26,7 +24,7 @@ class SearchResults extends React.Component<Props> {
     } = this.props;
     const moreThan200pxToBottom = this.scollableContainer.scrollTop + this.scollableContainer.clientHeight
       < this.scollableContainer.scrollHeight - 200;
-    console.log(query);
+
     if (page + 1 > lastPage || moreThan200pxToBottom || loading) {
       return null;
     }
@@ -35,7 +33,7 @@ class SearchResults extends React.Component<Props> {
 
   render() {
     const {
-      results, loading, error, page, query, lastPage, onClick,
+      results, loading, query, onClick,
     } = this.props;
 
     return results.length === 0 && !loading ? null : (
@@ -54,7 +52,7 @@ class SearchResults extends React.Component<Props> {
                     <img
                       className="dropdown-search__avatar"
                       src={result.avatar_url}
-                      alt="user profile picture"
+                      alt="user profile"
                     />
                     <h3 className="dropdown-search__username">{result.login}</h3>
                   </div>

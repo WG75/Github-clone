@@ -99,10 +99,7 @@ export default class LoginPanel extends React.Component<Props, State> {
       hint,
       error,
       loading,
-      onSubmit,
-      failedLoginMessage,
       failedLogin,
-      errorMessage,
       authTypeUsed,
     } = this.props;
 

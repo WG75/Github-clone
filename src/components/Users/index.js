@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import type { Node } from 'react';
 import User from '../User';
 import PsuedoUser from '../User/PsuedoUser';
 import NoResults from '../NoResults';

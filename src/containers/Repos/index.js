@@ -17,8 +17,8 @@ type Props = {
 class Repos extends React.Component<Props> {
   componentDidMount() {
     const { getRepos, user, profile } = this.props;
-    if (this.props.getRepos) {
-      this.props.getRepos(profile || user.login);
+    if (getRepos) {
+      getRepos(profile || user.login);
     }
   }
 

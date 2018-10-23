@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {
-  PieChart, Pie, Sector, Cell, Tooltip,
+  PieChart, Pie, Cell, Tooltip,
 } from 'recharts';
 
 import Psuedo from './Psuedo';
