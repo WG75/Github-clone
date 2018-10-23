@@ -1,5 +1,5 @@
 .received-events {
-  padding: 25px;
+  padding: 0 25px;
   width: 100%;
 }
 
@@ -9,14 +9,14 @@
 
 .received-events__title {
   color: var(--shade-of-black);
-  margin-bottom: 30px;
   font-size: 22px;
-  margin-left: 0;
+  margin: 10px 0 0;
 }
 .received-events_title--is-psuedo {
-margin-left: 0;
+margin: 0;
 }
 .received-events__hint {
   color: var(--shade-of-black);
   font-size: 18px;
+  margin-top: 22px
 }

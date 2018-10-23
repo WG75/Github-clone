@@ -10,6 +10,7 @@ type Props = {
   user: any,
   onLogout: void => void,
   withResults: any,
+  searchResults: Array<any>,
 };
 
 class Nav extends React.Component<Props> {
@@ -21,6 +22,7 @@ class Nav extends React.Component<Props> {
 function mapStateToProps(state: any) {
   return {
     user: state.global.user,
+    searchResults: state.search.results,
   };
 }
 

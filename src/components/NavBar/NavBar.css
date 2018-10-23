@@ -41,6 +41,7 @@
   position: absolute;
   left: calc(50% + 175px);
   top: calc(100vh / 2);
+  z-index: 999;
 }
 
 .nav__search--is-focused {

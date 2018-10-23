@@ -5,13 +5,12 @@
   height: 545px;
   overflow: auto;
   background: #f1f1f1;
-  z-index:1000
 }
 
 .dropdown-search__item {
   background: #ffffff;
   margin: 7px 0;
-  padding: 7px;
+  padding: 0 7px;
 }
 
 .dropdown-search__item:hover {

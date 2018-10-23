@@ -10,16 +10,21 @@ type Props = {
   user: any,
   onLogout: void => void,
   withResults: boolean,
+  searchResults: Array<any>,
 };
 
 type State = {
   searchIsFocused: boolean,
 };
 
-class Nav extends React.Component<Props, State> {
-  state = {
-    searchIsFocused: false,
-  };
+class NavBar extends React.Component<Props, State> {
+  constructor(props) {
+    console.log(props)
+    super(props);
+    this.state = {
+      searchIsFocused: props.searchResults.length > 0 && !props.withResults,
+    };
+  }
 
   handleOnFocus() {
     this.setState({
@@ -85,4 +90,4 @@ class Nav extends React.Component<Props, State> {
   }
 }
 
-export default Nav;
+export default NavBar;
