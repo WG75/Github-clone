@@ -2,9 +2,9 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
-import * as actions from '../../containers/LoginScreen/actions';
+import * as actions from '../../containers/Login/actions';
 import { LOAD_USER } from '../../containers/App/constants';
-import * as types from '../../containers/LoginScreen/constants';
+import * as types from '../../containers/Login/constants';
 
 const mockStore = configureStore([thunk]);
 const axiosMock = new AxiosMockAdapter(axios);

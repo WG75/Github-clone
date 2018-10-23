@@ -1,5 +1,5 @@
-import loginReducer from '../../containers/LoginScreen/reducer';
-import * as actions from '../../containers/LoginScreen/actions';
+import loginReducer from '../../containers/Login/reducer';
+import * as actions from '../../containers/Login/actions';
 
 const initialState = {
   loading: false,
