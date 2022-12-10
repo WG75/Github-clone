@@ -20,7 +20,7 @@
     "axios-mock-adapter": "^1.15.0",
     "body-parser": "^1.18.3",
     "btoa": "^1.2.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "normalize.css": "^8.0.0",
     "parse-link-header": "^1.0.1",
     "react": "^16.5.2",
